@@ -8,10 +8,24 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  decorators: [Story => <Story />],
+  decorators: [Story => Story()],
 };
 
-const Template = (args) => <Button {...args} />;
+const Template = (args) => {
+  const [primary, setPrimary] = React.useState(args.primary)
+
+  return <>
+    <Button {...args} primary={primary} />
+
+    <button onClick={() => setPrimary(!primary)}>
+      Toggle Primary with Transition
+    </button>
+
+    <div style={{ marginTop: '24px' }}>
+      Note: if <em>primary</em> is toggled via the "control" below, the transitions will not happen.
+    </div>
+  </>
+};
 
 export const Primary = Template.bind({});
 Primary.args = {

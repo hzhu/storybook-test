@@ -6,7 +6,7 @@
   cursor: pointer;
   display: inline-block;
   line-height: 1;
-  transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+  transition: background-color 1s ease-in-out, color 200ms ease-in-out;
 }
 .storybook-button--primary {
   color: white;
